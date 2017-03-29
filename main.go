@@ -15,11 +15,8 @@ func main() {
 		_, _ = c.Println("Hey!")
 		switch e := err.(type) {
 		case *exec.ExitError:
-			fmt.Printf("%s\n", e.Stderr)
-		case *exec.Error:
-			fmt.Print(e.Error())
+			fmt.Printf("%s", e.Stderr)
 		default:
-			fmt.Printf("Generic error of type %T", err)
 			fmt.Print(err.Error())
 		}
 	}
